@@ -17,9 +17,7 @@ public class NotesController : ControllerBase
         _service = service;
     }
 
-    /// <summary>
-    /// Получить все заметки текущего пользователя
-    /// </summary>
+    // Получить все заметки текущего пользователя
     [HttpGet]
     public async Task<IActionResult> GetAll([FromQuery] string? search, [FromQuery] string? tag)
     {
@@ -27,9 +25,7 @@ public class NotesController : ControllerBase
         return Ok(notes);
     }
 
-    /// <summary>
-    /// Получить заметку по ID
-    /// </summary>
+    // Получить заметку по ID
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -40,9 +36,7 @@ public class NotesController : ControllerBase
         return Ok(note);
     }
 
-    /// <summary>
-    /// Создать новую заметку
-    /// </summary>
+    // Создать новую заметку
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] NoteCreateDto dto)
     {
@@ -53,9 +47,7 @@ public class NotesController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = note.Id }, note);
     }
 
-    /// <summary>
-    /// Обновить заметку
-    /// </summary>
+    // Обновить заметку
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] NoteUpdateDto dto)
     {
@@ -69,9 +61,7 @@ public class NotesController : ControllerBase
         return Ok(note);
     }
 
-    /// <summary>
-    /// Удалить заметку
-    /// </summary>
+    // Удалить заметку
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
