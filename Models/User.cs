@@ -7,7 +7,6 @@ namespace PersonalNotesApi.Models
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
         
-        // Навигационное свойство
         public List<Note> Notes { get; set; } = new();
     }
 }
