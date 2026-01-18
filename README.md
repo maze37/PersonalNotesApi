@@ -12,7 +12,7 @@ REST API для управления личными заметками.
 - Data/ — контекст базы данных, репозитории  
 - DTOs/ — объекты передачи данных (для API)  
 - Models/ — внутренние модели данных (сущности)  
-- Migrations/ — миграции базы данных  
+- Migrations/ — миграции базы данных  (далее БД)
 - appsettings.json/ appsettings.Development.json` — конфигурация  
 - PersonalNotesApi.http — файл с примерами HTTP-запросов  
 
@@ -20,28 +20,25 @@ REST API для управления личными заметками.
 
 ## Установка и запуск
 
-1. Клонировать репозиторий  
+1. Клонировать репозиторий
    git clone https://github.com/maze37/PersonalNotesApi.git
    cd PersonalNotesApi
 
-2. Настроить базу данных PostgreSQL  
+2. Настроить базу данных PostgreSQL 
    - Создать базу данных (имя, пользователь, пароль)  
-   - Настроить подключение в `appsettings.json` / `appsettings.Development.json` (строка `ConnectionStrings:Default`)  
+   - Настроить подключение к БД в `appsettings.Development.json`
 
 3. Применить миграции  
    dotnet ef database update
 
 4. Запустить проект  
    dotnet run
-   По умолчанию приложение будет работать на `http://localhost:5000` (или порту, настроенном в конфигурации).
-
-5. Использовать `PersonalNotesApi.http` (или Postman / curl) для отправки запросов.
 
 ---
 
 ## Требования
 
-- .NET 7.0 или выше (уточните версию)  
+- .NET 7.0 или выше
 - PostgreSQL 13+  
 
 ---
